@@ -44,7 +44,7 @@ async def random_verse(ctx):
         try:
             verse_data = response.json()
             reference = verse_data['reference']
-            text = verse_data['verses'][0]['text']
+            text = verse_data['text']
             await ctx.send(f"{text} \n**{reference}**")
         except KeyError as e:
             await ctx.send("Sorry, I couldn't retrieve a verse at this time.")
@@ -68,7 +68,7 @@ async def find_verse(ctx, *, verse_reference: str):
         try:
             verse_data = response.json()
             reference = verse_data['reference']
-            text = verse_data['verses'][0]['text']
+            text = verse_data['text']
             await ctx.send(f"{text}\n**{reference}**")
         except KeyError as e:
             await ctx.send("Sorry, I couldn't retrieve the verse at this time.")
